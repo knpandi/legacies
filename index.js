@@ -21,7 +21,7 @@ import router from './routes/auth.js'
 
 // connect Server
   mongoose
-  .connect(process.env.MONGOODB_CONNECT_URL, {
+  .connect('mongodb+srv://LIT-Admin:xeZlZKjwImeW4HaH@onboarding-data.akudtdl.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -76,7 +76,7 @@ console.log("hello1")
 });
 
 
-const PORT = 8001;
+const PORT = 8000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -12,6 +12,7 @@ import authMiddleware from "../middlewares/authmiddlewares.js";
 router.post(
   '/signup',
   [
+    check('name', 'name is required').not().isEmpty(),
     check('username', 'Username is required').not().isEmpty(),
     check('password', 'Password is required').not().isEmpty(),
     check('phonenumber', 'phonenumber is required').not().isEmpty(),
@@ -24,7 +25,7 @@ router.post(
         return res.status(400).json({ errors: errors.array() });
       }
 
-      const { username, password,phonenumber } = req.body;   
+      const { username, password,phonenumber,name } = req.body;   
    
       let user = await User.findOne({ username });
       if (user) {
@@ -34,7 +35,8 @@ router.post(
        user = new User({
         username,
         password,
-        phonenumber
+        phonenumber,
+        name
       });
       console.log(req.body,user)
 
@@ -91,7 +93,7 @@ router.post(
         { expiresIn: '1h' },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({ token,name:user.name });
         }
       );
     }
