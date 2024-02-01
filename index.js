@@ -21,7 +21,7 @@ import router from './routes/auth.js'
 
 // connect Server
   mongoose
-  .connect('mongodb+srv://LIT-Admin:xeZlZKjwImeW4HaH@onboarding-data.akudtdl.mongodb.net/JWT', {
+  .connect(process.env.MONGOODB_CONNECT_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
