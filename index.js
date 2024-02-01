@@ -11,22 +11,22 @@ import router from './routes/auth.js'
 
 //connect DB Local
 
-// mongoose
-//   .connect('mongodb://127.0.0.1:27017/JWT', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log('MongoDB connected'))
-//   .catch((err) => console.log(err));
-
-//connect Server
-  mongoose
-  .connect('mongodb+srv://LIT-Admin:xeZlZKjwImeW4HaH@onboarding-data.akudtdl.mongodb.net/JWT', {
+mongoose
+  .connect('mongodb://127.0.0.1:27017/JWT', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err));
+
+//connect Server
+  // mongoose
+  // .connect('mongodb+srv://LIT-Admin:xeZlZKjwImeW4HaH@onboarding-data.akudtdl.mongodb.net/JWT', {
+  //   useNewUrlParser: true,
+  //   useUnifiedTopology: true,
+  // })
+  // .then(() => console.log('MongoDB connected'))
+  // .catch((err) => console.log(err));
 
 
 const app = express();
