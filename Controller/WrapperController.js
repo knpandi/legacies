@@ -2,7 +2,7 @@ import axios from "axios";
 import express from "express";
 import { google } from "googleapis";
 import open from "open";
-import bodyParser from "body-parser";
+
 
 
 const api_key = process.env.APIKEY;
