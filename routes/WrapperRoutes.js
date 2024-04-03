@@ -1,31 +1,48 @@
 import express from "express";
-import { TextToImage,ImageToImage,UtilityFunction,FindAllModel,FindOneModel,Controlnets,SearchModel,
-ImageToImageDisplay,UtilityFunctionDisplay,ControlnetsDisplay,TextToImageDisplay } from "../Controller/WrapperController.js";
+import { OrganicForm,ChannelBottom,Reputationreview,
+ Dashboardstatus,ReviewForm,ReviewURL,Semdmail,ReviewURLUpdate,Login,Resetpassword,Forgotpassword,Semdmailreview,
+ ReviewURLfindone,Newuserfindone,Newuserpasswordupdate,Viewalldashboard} from "../Controller/WrapperController.js";
 
 
 const wrapperroute = express.Router();
 
 //Wrapper for TextToImage
-wrapperroute.post("/textToImage", TextToImage);
 
-wrapperroute.get("/findAllModel",FindAllModel)
 
-wrapperroute.get("/findOneModel",FindOneModel)
+wrapperroute.get("/organicForm",OrganicForm)
 
-wrapperroute.post("/imageToImage", ImageToImage);
+wrapperroute.get("/channelBottom",ChannelBottom)
 
-wrapperroute.post("/utilityFunction", UtilityFunction);
 
-wrapperroute.post("/controlnets",Controlnets)
+wrapperroute.get("/reputationreview",Reputationreview)
 
-wrapperroute.get("/searchModel",SearchModel)
 
-wrapperroute.get("/imageToImagedisplay",ImageToImageDisplay)
+wrapperroute.get("/dashboardstatus",Dashboardstatus)
 
-wrapperroute.get("/textToImagedisplay", TextToImageDisplay);
 
-wrapperroute.get("/utilityFunctiondisplay", UtilityFunctionDisplay);
+wrapperroute.post("/reviewForm",ReviewForm)
 
-wrapperroute.get("/controlnetsdisplay",ControlnetsDisplay)
+wrapperroute.post("/reviewURL",ReviewURL)
+
+wrapperroute.get("/reviewURLfindone",ReviewURLfindone)
+
+wrapperroute.post("/reviewURLUpdate",ReviewURLUpdate)
+
+wrapperroute.post("/login",Login)
+
+wrapperroute.get("/resetpassword",Resetpassword)
+
+wrapperroute.post("/forgotpassword",Forgotpassword)
+
+wrapperroute.post("/sendmail",Semdmail);
+
+wrapperroute.post("/sendmailreview",Semdmailreview);
+
+wrapperroute.get("/newuserfindone",Newuserfindone)
+
+wrapperroute.post("/newuserpasswordupdate",Newuserpasswordupdate)
+
+wrapperroute.get("/viewalldashboard",Viewalldashboard)
+
 
 export default wrapperroute;
